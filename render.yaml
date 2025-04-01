@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: obesity-risk-api
+    env: python
+    buildCommand: |
+      pip install --upgrade pip
+      pip install -r render-requirements.txt
+      mkdir -p models logs data/train
+    startCommand: bash ./start.sh
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.18
+      - key: PYTHONPATH
+        value: .
+      - key: PYTHONUNBUFFERED
+        value: "1" 
