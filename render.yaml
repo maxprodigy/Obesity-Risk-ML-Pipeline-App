@@ -13,4 +13,13 @@ services:
       - key: PYTHONPATH
         value: .
       - key: PYTHONUNBUFFERED
-        value: "1" 
+        value: "1"
+      - key: PORT
+        value: 10000
+    healthCheckPath: /health
+    buildFilter:
+      paths:
+        - src/**
+        - render-requirements.txt
+        - start.sh
+        - render.yaml 
