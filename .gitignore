@@ -39,6 +39,8 @@ yarn-error.log
 *.pkl
 *.h5
 *.model
+*.joblib
+*.json
 .ipynb_checkpoints/
 
 # Log files
@@ -62,4 +64,14 @@ docker-compose.override.yml
 
 # Project specific
 /data/raw/
-/__pycache__/ 
+/__pycache__/
+
+# Large files
+src/data/train/training_data.csv
+frontend/package-lock.json
+backend/models/xgb_obesity_model.json
+models/model.joblib
+models/xgb_obesity_model.json
+data/train/estimation_of_obesity_levels_based_on_eating_habits_and_physical_condition.csv
+data/train/ObesityDataSet_raw_and_data_synthetic.csv
+notebook/Obesity_Risk_ML_Pipeline.ipynb 
