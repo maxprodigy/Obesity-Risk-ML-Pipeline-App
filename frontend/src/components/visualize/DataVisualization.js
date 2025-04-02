@@ -46,7 +46,7 @@ const DataVisualization = () => {
   const fetchVisualizationData = async () => {
     try {
       console.log('Fetching visualization data...');
-      const response = await fetch('http://localhost:8000/visualize/data');
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/visualize/data`);
       
       if (!response.ok) {
         const errorData = await response.json();
