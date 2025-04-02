@@ -156,9 +156,8 @@ These are automatically updated after retraining.
 ## Sample Visualizations
 
 > 📷 **Screenshot Example**  
-> *(Replace the image below with your own live dashboard visualization)*
 
-![Obesity Risk Visualization](./path-to-your-uploaded-screenshot.png)
+![Obesity Risk Visualization](https://github.com/maxprodigy/obesity-risk-backend/blob/main/notebook/Screenshot%202025-04-02%20185347.png)
 
 Includes:
 - Risk distribution (low/medium/high)
