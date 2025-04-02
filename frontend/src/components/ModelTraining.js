@@ -11,7 +11,7 @@ import {
 import { CloudUpload, Autorenew } from '@mui/icons-material';
 import axios from 'axios';
 
-const API_URL = 'http://localhost:8000';
+const API_URL = process.env.REACT_APP_API_URL;
 
 const ModelTraining = () => {
   const [selectedFile, setSelectedFile] = useState(null);
