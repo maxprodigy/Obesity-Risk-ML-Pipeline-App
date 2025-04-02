@@ -1,0 +1,35 @@
+# Use official Python image
+FROM python:3.9-slim
+
+# Set working directory
+WORKDIR /app
+
+# Copy requirements file
+COPY requirements.txt .
+
+# Install dependencies (including curl for healthcheck)
+RUN pip install --no-cache-dir -r requirements.txt && \
+    apt-get update && \
+    apt-get install -y curl && \
+    rm -rf /var/lib/apt/lists/*
+
+# Create required directories
+RUN mkdir -p models logs data/train
+
+# Copy source code and data to maintain the same structure
+# as your local environment
+COPY src/ ./src/
+COPY models/ ./models/
+COPY data/ ./data/
+
+# Make sure we're in the right working directory for imports
+WORKDIR /app
+
+# Modify Python path to find modules correctly
+ENV PYTHONPATH="/app"
+
+# Expose FastAPI port
+EXPOSE 8000
+
+# Start the FastAPI application
+CMD ["python", "-m", "uvicorn", "src.api:app", "--host", "0.0.0.0", "--port", "8000"] 
