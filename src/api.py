@@ -79,9 +79,9 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:3000",
-        "https://obesity-risk-frontend.vercel.app",  # Your Vercel deployment
-        "https://*.vercel.app"  # Allow all Vercel preview deployments
+        "https://obesity-risk-frontend.vercel.app",  # Vercel
     ],
+    allow_origin_regex=r"https://.*\.vercel\.app",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
