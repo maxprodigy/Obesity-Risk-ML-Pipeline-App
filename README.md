@@ -59,8 +59,8 @@ obesity-risk-predictor/
 - Generates and stores feature importance
 
 ### Web Application
-- React + Material UI frontend
-- FastAPI backend with REST endpoints
+- React + Material UI [frontend](https://obesity-risk-frontend.vercel.app/)
+- FastAPI [backend](https://obesity-risk-api.onrender.com/) with REST endpoints
 - Data visualizations by risk category and health metrics
 - Health check and status indicators
 
@@ -183,7 +183,7 @@ python src/test_api.py
 - **Backend**: Render (Dockerfile backend setup)
 - Ensure `.env.production` in frontend contains:
   ```env
-  REACT_APP_API_URL=https://your-backend-api.onrender.com
+  REACT_APP_API_URL=https://obesity-risk-api.onrender.com/
   NODE_ENV=production
   ```
 
@@ -191,7 +191,7 @@ python src/test_api.py
 
 ## Author
 
-Built by **@maxprodigy**  
+Built by **Peter Johnson**  
 For an academic assignment involving ML deployment, full-stack integration, and model lifecycle management.
 
 ---
