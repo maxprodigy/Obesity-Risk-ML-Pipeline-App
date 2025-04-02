@@ -8,7 +8,7 @@ A full-stack machine learning web application that predicts obesity risk based o
 
 ## Video Presentation
 
-**Watch the walkthrough here**: *[https://youtu.be/XrULIUyNBNE?si=kOiT4chrQXs63JD-]*  
+**Watch the walkthrough here**: *[Link](https://youtu.be/XrULIUyNBNE?si=kOiT4chrQXs63JD-)*  
 
 ---
 
