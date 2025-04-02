@@ -551,7 +551,7 @@ async def retrain_model(
                 logger.info("Detected obesity dataset format with 'nobeyesdad' column")
             
             # Import prepare_data and train_model from train_model.py
-            from train_model import prepare_data, train_model
+            from .train_model import prepare_data, train_model
             
             # Prepare data for training
             try:
