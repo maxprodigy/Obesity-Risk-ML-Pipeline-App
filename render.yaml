@@ -7,8 +7,7 @@ services:
       pip install --upgrade pip
       pip install -r requirements.txt
       mkdir -p models logs data/train
-      chmod +x start-render.sh
-    startCommand: ./start-render.sh
+    startCommand: python -m uvicorn test_api_render:app --host 0.0.0.0 --port $PORT --log-level debug
     envVars:
       - key: PYTHON_VERSION
         value: 3.9.18
