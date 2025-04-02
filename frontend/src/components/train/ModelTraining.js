@@ -67,7 +67,7 @@ const ModelTraining = () => {
     try {
       // First, validate the file
       setTrainingStatus('Validating file...');
-      const validateResponse = await fetch('http://localhost:8000/validate', {
+      const validateResponse = await fetch(`${process.env.REACT_APP_API_URL}/validate`, {
         method: 'POST',
         body: formData,
       });
