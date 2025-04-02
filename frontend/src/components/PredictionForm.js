@@ -16,6 +16,7 @@ import axios from 'axios';
 
 // API base URL
 const API_URL = process.env.REACT_APP_API_URL;
+console.log("API URL:", API_URL);
 
 const PredictionForm = () => {
   const [features, setFeatures] = useState({
