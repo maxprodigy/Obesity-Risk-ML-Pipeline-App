@@ -16,10 +16,13 @@ RUN pip install --no-cache-dir -r requirements.txt && \
 # Create required directories
 RUN mkdir -p models logs data/train
 
-# Copy source code and data to maintain the same structure
-# as your local environment
+# Copy source code
 COPY src/ ./src/
-COPY models/ ./models/
+
+# Copy model directory structure (models will be mounted at runtime)
+RUN mkdir -p models
+
+# Copy data directory structure (without large files)
 COPY data/ ./data/
 
 # Make sure we're in the right working directory for imports
@@ -30,6 +33,10 @@ ENV PYTHONPATH="/app"
 
 # Expose FastAPI port
 EXPOSE 8000
+
+# Use a healthcheck to verify the application is running
+HEALTHCHECK --interval=30s --timeout=5s --start-period=5s --retries=3 \
+  CMD curl -f http://localhost:8000/health || exit 1
 
 # Start the FastAPI application
 CMD ["python", "-m", "uvicorn", "src.api:app", "--host", "0.0.0.0", "--port", "8000"] 
